@@ -29,6 +29,7 @@ require_relative 'subscription'
 require_relative 'user'
 require_relative 'user_ban'
 require_relative 'user_follow'
+require_relative 'user_subscription'
 require_relative 'redemption'
 require_relative 'video'
 
