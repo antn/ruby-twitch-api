@@ -15,4 +15,7 @@ module Twitch
       super(self.body['message'])
     end
   end
+
+  # An error returned when the API returns a 404 status
+  class NotFoundError < StandardError; end
 end

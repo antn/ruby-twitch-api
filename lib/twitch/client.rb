@@ -7,7 +7,7 @@ require 'twitch_oauth2'
 
 require_relative 'response'
 
-require_relative 'api_error'
+require_relative 'errors'
 require_relative 'bits_leader'
 require_relative 'category'
 require_relative 'channel'
@@ -168,6 +168,8 @@ module Twitch
 
         http_response = CONNECTION.public_send http_method, resource, params
       end
+
+      raise NotFoundError.new if http_response.status == 404
 
       return http_response if http_response.success?
 
